@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EE6241B1C92637D007CC1F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6241A1C92637D007CC1F2 /* AppDelegate.swift */; };
+		3EE6241D1C92637D007CC1F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6241C1C92637D007CC1F2 /* ViewController.swift */; };
+		3EE6241F1C92637D007CC1F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE6241E1C92637D007CC1F2 /* Assets.xcassets */; };
+		3EE624221C92637D007CC1F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE624201C92637D007CC1F2 /* Main.storyboard */; };
+		E7C193BC1CA728F2005AA3D4 /* ApplicationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C193BB1CA728F2005AA3D4 /* ApplicationInfo.swift */; };
+		E7C193BE1CA73385005AA3D4 /* VerticallyAlignedTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C193BD1CA73385005AA3D4 /* VerticallyAlignedTextFieldCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3EE624171C92637D007CC1F2 /* macBrowserPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macBrowserPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE6241A1C92637D007CC1F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3EE6241C1C92637D007CC1F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3EE6241E1C92637D007CC1F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3EE624211C92637D007CC1F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EE624231C92637D007CC1F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7C193BB1CA728F2005AA3D4 /* ApplicationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationInfo.swift; sourceTree = "<group>"; };
+		E7C193BD1CA73385005AA3D4 /* VerticallyAlignedTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyAlignedTextFieldCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EE624141C92637D007CC1F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EE6240E1C92637D007CC1F2 = {
+			isa = PBXGroup;
+			children = (
+				3EE624191C92637D007CC1F2 /* macBrowserPicker */,
+				3EE624181C92637D007CC1F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EE624181C92637D007CC1F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EE624171C92637D007CC1F2 /* macBrowserPicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EE624191C92637D007CC1F2 /* macBrowserPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3EE6241A1C92637D007CC1F2 /* AppDelegate.swift */,
+				3EE6241C1C92637D007CC1F2 /* ViewController.swift */,
+				E7C193BB1CA728F2005AA3D4 /* ApplicationInfo.swift */,
+				3EE6241E1C92637D007CC1F2 /* Assets.xcassets */,
+				3EE624201C92637D007CC1F2 /* Main.storyboard */,
+				3EE624231C92637D007CC1F2 /* Info.plist */,
+				E7C193BD1CA73385005AA3D4 /* VerticallyAlignedTextFieldCell.swift */,
+			);
+			path = macBrowserPicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EE624161C92637D007CC1F2 /* macBrowserPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EE624261C92637D007CC1F2 /* Build configuration list for PBXNativeTarget "macBrowserPicker" */;
+			buildPhases = (
+				3EE624131C92637D007CC1F2 /* Sources */,
+				3EE624141C92637D007CC1F2 /* Frameworks */,
+				3EE624151C92637D007CC1F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macBrowserPicker;
+			productName = macBrowserPicker;
+			productReference = 3EE624171C92637D007CC1F2 /* macBrowserPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EE6240F1C92637D007CC1F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Antonino Urbano";
+				TargetAttributes = {
+					3EE624161C92637D007CC1F2 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 3EE624121C92637D007CC1F2 /* Build configuration list for PBXProject "macBrowserPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3EE6240E1C92637D007CC1F2;
+			productRefGroup = 3EE624181C92637D007CC1F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EE624161C92637D007CC1F2 /* macBrowserPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EE624151C92637D007CC1F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE6241F1C92637D007CC1F2 /* Assets.xcassets in Resources */,
+				3EE624221C92637D007CC1F2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EE624131C92637D007CC1F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE6241D1C92637D007CC1F2 /* ViewController.swift in Sources */,
+				3EE6241B1C92637D007CC1F2 /* AppDelegate.swift in Sources */,
+				E7C193BC1CA728F2005AA3D4 /* ApplicationInfo.swift in Sources */,
+				E7C193BE1CA73385005AA3D4 /* VerticallyAlignedTextFieldCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3EE624201C92637D007CC1F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EE624211C92637D007CC1F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EE624241C92637D007CC1F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3EE624251C92637D007CC1F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3EE624271C92637D007CC1F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = macBrowserPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.urby.macBrowserPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3EE624281C92637D007CC1F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = macBrowserPicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.urby.macBrowserPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EE624121C92637D007CC1F2 /* Build configuration list for PBXProject "macBrowserPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE624241C92637D007CC1F2 /* Debug */,
+				3EE624251C92637D007CC1F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EE624261C92637D007CC1F2 /* Build configuration list for PBXNativeTarget "macBrowserPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE624271C92637D007CC1F2 /* Debug */,
+				3EE624281C92637D007CC1F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EE6240F1C92637D007CC1F2 /* Project object */;
+}
