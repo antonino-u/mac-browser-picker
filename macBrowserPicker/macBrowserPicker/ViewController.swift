@@ -11,6 +11,7 @@ import Cocoa
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
     let scheme = "http"
+    let currentBundleId = NSBundle.mainBundle().bundleIdentifier
     
     let imageColumnIdentifier = "imageColumn"
     let nameColumnIdentifier = "nameColumn"
@@ -31,10 +32,20 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     }
     
     private func setupView() {
+        
+        //set ourself as the default
+        LSSetDefaultHandlerForURLScheme(scheme, currentBundleId!)
+        
+        //build the list of http capable apps
         if let unmanagedHttpCapableBundleIDs = LSCopyAllHandlersForURLScheme(scheme) {
             let httpCapableBundleIDs = unmanagedHttpCapableBundleIDs.takeRetainedValue() as NSArray
             for httpCapableBundleID in httpCapableBundleIDs
             {
+                
+                if (httpCapableBundleID as! String) == currentBundleId! {
+                    continue
+                }
+                
                 let error: UnsafeMutablePointer<Unmanaged<CFError>?> = nil
                 let unmanagedApplicationURLs = LSCopyApplicationURLsForBundleIdentifier(httpCapableBundleID as! CFString, error)
                 let applicationURLs = (unmanagedApplicationURLs?.takeRetainedValue() ?? []) as NSArray

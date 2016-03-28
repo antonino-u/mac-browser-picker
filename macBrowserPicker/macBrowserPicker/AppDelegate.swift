@@ -14,11 +14,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
     }
-
+    
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+    }
+    
+    func applicationWillFinishLaunching(notification: NSNotification) {
+        let appleEventManager = NSAppleEventManager.sharedAppleEventManager()
+        appleEventManager.setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURLEvent(_:replyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+    }
+    
+    func handleGetURLEvent(event: NSAppleEventDescriptor?, replyEvent: NSAppleEventDescriptor?) {
+        if let urlString = event?.paramDescriptorForKeyword(AEKeyword(keyDirectObject))?.stringValue {
+                openAppWithBundleIdentifier("com.apple.safari", urlString: urlString)
+//                openAppWithBundleIdentifier("com.google.chrome", urlString: urlString)
+            NSApp.terminate(self)
+        }
+    }
+    
+    func openAppWithBundleIdentifier(bundleIdentifier: String, urlString: String) -> String {
+        let task = NSTask()
+        task.launchPath = "/usr/bin/open"
+        task.arguments = ["-b", bundleIdentifier, urlString]
+        let pipe = NSPipe()
+        task.standardOutput = pipe
+        task.standardError = pipe
+        task.launch()
+        task.waitUntilExit()
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output: String = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+        return output
     }
 
 }
