@@ -26,9 +26,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func handleGetURLEvent(event: NSAppleEventDescriptor?, replyEvent: NSAppleEventDescriptor?) {
         if let urlString = event?.paramDescriptorForKeyword(AEKeyword(keyDirectObject))?.stringValue {
-                openAppWithBundleIdentifier("com.apple.safari", urlString: urlString)
-//                openAppWithBundleIdentifier("com.google.chrome", urlString: urlString)
-            NSApp.terminate(self)
+            if let lastBundleId = NSUserDefaults.standardUserDefaults().stringForKey("last_bundle_id") {
+                //post a message to the vc to countdown then open the url
+                openAppWithBundleIdentifier(lastBundleId, urlString: urlString)
+                NSApp.terminate(self)
+            }
         }
     }
     
@@ -42,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         task.launch()
         task.waitUntilExit()
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        let output: String = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+        let output = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
         return output
     }
 

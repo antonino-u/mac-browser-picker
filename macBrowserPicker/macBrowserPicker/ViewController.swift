@@ -18,8 +18,12 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     let bundleIdColumnIdentifier = "bundleIdColumn"
     
     var appsInfo = [ApplicationInfo]()
+    var countdownSecondsRemaining = 3
+    var countdownTimer: NSTimer?
     
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var countdownContainer: NSView!
+    @IBOutlet weak var countdownLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,11 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     
     private func setupView() {
         
+        //setup the actual view
+        countdownContainer.wantsLayer = true
+        countdownContainer.layer?.backgroundColor = NSColor.blackColor().colorWithAlphaComponent(0.5).CGColor
+        countdownContainer.layer?.cornerRadius = 15
+        
         //set ourself as the default
         LSSetDefaultHandlerForURLScheme(scheme, currentBundleId!)
         
@@ -42,7 +51,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             for httpCapableBundleID in httpCapableBundleIDs
             {
                 
-                if (httpCapableBundleID as! String) == currentBundleId! {
+                if (httpCapableBundleID as! String).lowercaseString == currentBundleId!.lowercaseString {
                     continue
                 }
                 
@@ -70,6 +79,18 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
 
         tableView.setDelegate(self)
         tableView.setDataSource(self)
+        
+        //set the timer
+        countdownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.countdown), userInfo: nil, repeats: true)
+    }
+    
+    func countdown() {
+        countdownSecondsRemaining = countdownSecondsRemaining-1
+        countdownLabel.stringValue = String(countdownSecondsRemaining)
+        if countdownSecondsRemaining == 0 {
+            countdownTimer?.invalidate()
+            countdownContainer.hidden = true
+        }
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -95,7 +116,12 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     func tableViewSelectionDidChange(notification: NSNotification) {
         if tableView.selectedRow > -1 {
             let selectedApplicationInfo = appsInfo[tableView.selectedRow]
-            LSSetDefaultHandlerForURLScheme(scheme, selectedApplicationInfo.bundleIdentifier)
+            NSUserDefaults.standardUserDefaults().setValue(selectedApplicationInfo.bundleIdentifier, forKey: "last_bundle_id")
+            if let urlStringToOpen = NSUserDefaults.standardUserDefaults().stringForKey("url_string_to_open") {
+                NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "url_string_to_open")
+                (NSApplication.sharedApplication().delegate as! AppDelegate).openAppWithBundleIdentifier(selectedApplicationInfo.bundleIdentifier, urlString: urlStringToOpen)
+                NSApp.terminate(self)
+            }
         }
         tableView.deselectAll(nil)
     }
